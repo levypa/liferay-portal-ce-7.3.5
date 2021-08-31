@@ -20,7 +20,7 @@ services:
             - lfrnet
   mysql_liferay:
     container_name: "mysql_dev"
-    image: "levypa/liferay-ce-portal-7.3.5"
+    image: "levypa/mysql-liferay-ce-portal-7.3.5"
     ports:
       - "3306:3306"
     environment:
