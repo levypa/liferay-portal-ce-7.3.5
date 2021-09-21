@@ -10,7 +10,7 @@ Um servidor Ubuntu 20.04 configurado conforme o Guia de configuração inicial d
 
 ** Docker **
 
-    ``` sudo apt update ```
+    ```sudo apt update```
 
     ``` sudo apt install apt-transport-https ca-certificates curl software-properties-common ```
 
