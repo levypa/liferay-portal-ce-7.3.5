@@ -8,6 +8,6 @@ Um servidor Ubuntu 20.04 configurado conforme o Guia de configuração inicial d
 
 ## Passo 01: Instalação do Docker e Docker Compose
 
-** Docker **
+**Docker**
 
     sudo apt update
