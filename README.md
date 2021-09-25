@@ -1,5 +1,7 @@
 # liferay-portal-ce-7.3.5
 
+     docker-compose up -d
+
 # Instalação do Docker no Ubuntu 20.04 (containers)
 
 [Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
@@ -94,7 +96,7 @@ Um servidor Ubuntu 20.04 configurado conforme o Guia de configuração inicial d
 
     **Docker Compose**
 
-## Passo 09: Baixar, instalar e iniciar umagens e seus os containers docker
+## Passo 09: Baixar, instalar e iniciar imagens e containers docker
 
     docker-compose up -d
 
