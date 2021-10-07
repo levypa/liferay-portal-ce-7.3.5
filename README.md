@@ -8,7 +8,7 @@
 
 Um servidor Ubuntu 20.04 configurado conforme o Guia de configuração inicial de servidor do Ubuntu 20.04, incluindo um usuário sudo não root e um firewall. Uma conta no [Docker Hub](https://hub.docker.com/) se você deseja criar suas próprias imagens e enviá-las para o Docker Hub
 
-## Passo 01: Instalação do Docker e Docker Compose
+## Dica 01: Instalação do Docker e Docker Compose
 
 **Docker**
 
@@ -28,7 +28,7 @@ Um servidor Ubuntu 20.04 configurado conforme o Guia de configuração inicial d
 
     apt-get install docker-compose
 
-## Passo 02: Comando básicos
+## Dica 02: Comando básicos
 ### 
 
     docker
@@ -41,26 +41,26 @@ Um servidor Ubuntu 20.04 configurado conforme o Guia de configuração inicial d
 
     docker info`
 
-## Passo 03: namespaces
+## Dica 03: namespaces
 ### isolamento de processos
     **Exemplo:** 
             - Pid:
             - User:
             - Network:
 
-## Passo 04: cgrups
+## Dica 04: cgrups
 ### controla os recursos do
     **Exemplo:**
 
-## Passo 05: 
+## Dica 05: 
 ### Overlay File System
     **Exemplo:**
 
-## Passo 06: Baixa e executa uma imagem de teste do Doc
+## Dica 06: Baixa e executa uma imagem de teste do Doc
 
     docker run hello-world`
 
-## Passo 07: Baixar e executar uma imagem do bash do ubuntu
+## Dica 07: Baixar e executar uma imagem do bash do ubuntu
 
     docker run -it ubuntu bash     
 
@@ -70,7 +70,7 @@ Um servidor Ubuntu 20.04 configurado conforme o Guia de configuração inicial d
 
     docker run -d -p 80:80 --name nginx-docker nginx
 
-## Passo 08: Manipular imagens e containers docker
+## Dica 08: Manipular imagens e containers docker
 
     **Listar imagens docker**
 
@@ -92,11 +92,11 @@ Um servidor Ubuntu 20.04 configurado conforme o Guia de configuração inicial d
 
     docker system prune
 
-## Passo 08: Instalar imagens e container do Docker Hub
+## Dica 08: Instalar imagens e container do Docker Hub
 
     **Docker Compose**
 
-## Passo 09: Baixar, instalar e iniciar imagens e containers docker
+## Dica 09: Baixar, instalar e iniciar imagens e containers docker
 
     docker-compose up -d
 
@@ -112,12 +112,12 @@ Um servidor Ubuntu 20.04 configurado conforme o Guia de configuração inicial d
 
     docker-compose down
 
-## Passo 10: Monitorar recursos dos containers
+## Dica 10: Monitorar recursos dos containers
 
     docker stats
 
 
-## Passo 11: Manipular imagens do Dockerfile (imagem local de NODE, como exemplo.)
+## Dica 11: Manipular imagens do Dockerfile (imagem local de NODE, como exemplo.)
 
     docker build .
 
@@ -138,19 +138,19 @@ Um servidor Ubuntu 20.04 configurado conforme o Guia de configuração inicial d
     docker system prune
 
 
-## Passo 12: Converter aquivos para uma imagem local
+## Dica 12: Converter aquivos para uma imagem local
 
     docker build -t levypa/liferay-ce-portal-7.3.5:latest .
 
     docker build -t levypa/mysql-liferay-ce-portal-7.3.5:latest .
 
-## Passo 13: Criar imagem local (dentro do diretório do arquivo Dockerfile)
+## Dica 13: Criar imagem local (dentro do diretório do arquivo Dockerfile)
 
     docker push levypa:mysql-liferay-ce-portal-7.3.5
 
     docker push levypa:liferay-ce-portal-7.3.5
 
-## Passo 14: Subir imagem para Docker Hub (dentro do diretório do arquivo do Dockerfile)
+## Dica 14: Subir imagem para Docker Hub (dentro do diretório do arquivo do Dockerfile)
 
     docker login
 
@@ -158,12 +158,24 @@ Um servidor Ubuntu 20.04 configurado conforme o Guia de configuração inicial d
 
     docker push levypa/liferay-ce-portal-7.3.5
 
-## Passo 15: Monitorar containers com parâmetros especiais
+## Dica 15: Monitorar containers com parâmetros especiais
 
     docker stats $(docker ps|grep -v "NAMES"|awk '{ print $NF }'|tr "\n" " ")
 
-# Passo 10 - Executar uma imagem e atribuir parametros de configuração
+## Dica 10 - Executar uma imagem e atribuir parametros de configuração
 
     docker run -it --rm -p 8080:80 -p 443:443 --name php8site -v "$PWD":/var/www/html php8
 
+## Dica 11: Salve suas imagens usando docker save como
+  
+     docker save -o docker-images.tar app-web
+     
+## Dica 12: Copie imagens usando docker-machine scp
 
+     docker-machine scp ./docker-images.tar remote-machine:/home/ubuntu
+     
+## Dica 13: Carregar a imagem do Docker
+
+     docker-machine ssh remote-machine Sudo docker load -i docker-images.tar
+
+# Dica 14: 
